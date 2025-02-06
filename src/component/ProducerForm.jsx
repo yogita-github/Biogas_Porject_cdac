@@ -32,9 +32,11 @@ const handleStatusChange = (value) => {
       .post(url, data)
       .then((result) => {
         alert(result.data);
-        // navigate("https://localhost:44321/api/Test/PostWasteContribution");
+        console.log(result.data);
+        navigate('/')
       })
       .catch((error) => {
+        console.log(error);
         alert(error);
       });
   };

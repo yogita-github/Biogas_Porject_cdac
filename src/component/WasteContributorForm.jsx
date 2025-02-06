@@ -4,16 +4,21 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const WasteContributorForm = () => {
-   const [contributor_id, setContributorId] = useState("");
+  // const [contributor_id, setContributorId] = useState("");
+  const [user_id, setUserId] = useState("");
   const[waste_type,setWasteType] = useState('');
   const[waste_quantity,setWasteQuantity] = useState('');
   const [status, setStatus] = useState("");
   const [collected_by, setCollectedBy] = useState("");
   const[collected_date,setCollectedDate] = useState("");
 
-;
-  const handleContributorIdChange = (e) => {
-    setContributorId(e.target.value);
+    const navigate = useNavigate();
+
+  // const handleContributorIdChange = (e) => {
+  //   setContributorId(e.target.value);
+  // };
+  const handleUserIdChange = (e) => {
+    setUserId(e.target.value);
   };
 const handleWasteTypeChange = (value) => {
   setWasteType(value);
@@ -31,33 +36,56 @@ const handleCollectedDateChange = (value) => {
   setCollectedDate(value);
 };
 
-const handleSave = () => {
+// const handleSave = () => {
+//   const data = {
+//     // contributor_id: contributor_id,
+//     user_id: user_id,
+//     waste_type: waste_type,
+//     waste_quantity: waste_quantity,
+//     status: status,
+//     collected_by: collected_by,
+//     collected_date: collected_date,
+//   };
+//   const url = "https://localhost:44321/api/Test/WasteAddition";
+//   axios
+//     .post(url, data)
+//     .then((result) => {
+//       alert(result.data);
+//       navigate('/producerform')
+//       // navigate("https://localhost:44321/api/Test/PostWasteContribution");
+//     })
+//     .catch((error) => {
+//       alert(error);
+//     });
+// };
+
+const handleSave = (event) => {
+  event.preventDefault(); // Prevent form from submitting the default way
+
   const data = {
-    contributor_id: contributor_id,
+    user_id: user_id,
     waste_type: waste_type,
     waste_quantity: waste_quantity,
     status: status,
     collected_by: collected_by,
     collected_date: collected_date,
   };
+
+ 
   const url = "https://localhost:44321/api/Test/WasteAddition";
+
   axios
     .post(url, data)
     .then((result) => {
-      alert(result.data);
-      navigate('/producerform')
-      // navigate("https://localhost:44321/api/Test/PostWasteContribution");
+      alert("Data submitted successfully!");
+      console.log(data);
+      navigate("/wastecontributer"); // Navigate to the next page
     })
     .catch((error) => {
-      alert(error);
+      console.log(error);
+      alert("Error submitting data: " + error);
     });
 };
-
-
-
-  const navigate = useNavigate();
-
-
 
   return (
     <div className="bg-gradient-to-r from-green-400 to-blue-500 min-h-screen">
@@ -89,13 +117,13 @@ const handleSave = () => {
                 htmlFor="user_id"
                 className="text-lg font-semibold text-gray-700 mb-2"
               >
-                Contributor Id
+                User ID
               </label>
               <input
                 type="number"
                 id="user_id"
                 name="user_id"
-                onChange={handleContributorIdChange}
+                onChange={handleUserIdChange}
                 className="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-green-500 focus:outline-none"
                 required
               />

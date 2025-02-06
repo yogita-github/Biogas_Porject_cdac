@@ -34,7 +34,8 @@ const handleSave = (e)=>{
 const url = "https://localhost:44321/api/Test/Registration";
   axios.post(url,data).then((result)=>{
       alert(result.data);
-      navigate("/login");
+      
+      // navigate("/login");
   }).catch((error)=>{
     alert(error);
   })
