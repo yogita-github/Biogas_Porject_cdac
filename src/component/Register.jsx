@@ -32,7 +32,8 @@ const handleSave = (e)=>{
     role:role,
   };
 // const url = "https://localhost:44321/api/Test/Registration";
-const url ="https://biogas-cwevg4dzc3a9d9bz.canadacentral-01.azurewebsites.net/Help/Api/POST-api-Test-Registration";
+const url =
+  "https://biogas-cwevg4dzc3a9d9bz.canadacentral-01.azurewebsites.net/api/Test/Registration";
   axios.post(url,data).then((result)=>{
       alert(result.data);
       
