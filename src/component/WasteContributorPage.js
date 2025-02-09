@@ -11,7 +11,7 @@ const WasteContributorPage = () => {
   const navigate = useNavigate();
 
   // Waste Type Options
-  const wasteTypes = ["Plastic", "Organic", "Metal", "Paper", "Glass", "Other"];
+  const wasteTypes = ["vegetables","food waste", "agriculture waste","Organic","garden hand yard waste","paper and cardboard waste","animal waste","other bio waste"];
 
   // Handle file/photo capture
   const handlePhotoCapture = (e) => {

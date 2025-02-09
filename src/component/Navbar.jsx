@@ -19,7 +19,7 @@ export const Navbar = () => {
           <li><Link to="/faq" className="hover:underline cursor-pointer">FAQs</Link></li>
           {/* <li><Link to="/wasteform" className="hover:underline cursor-pointer">Waste</Link></li> */}
           {/* <li><Link to="/producerform" className="hover:underline cursor-pointer">Producerform</Link></li> */}
-          <li><Link to="/admin" className="hover:underline cursor-pointer">Admin</Link></li>
+          {/* <li><Link to="/admin" className="hover:underline cursor-pointer">Admin</Link></li> */}
         </ul>
 
         {/* Login and Signup Buttons */}
