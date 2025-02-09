@@ -72,7 +72,9 @@ const handleSave = (event) => {
   };
 
  
-  const url = "https://localhost:44321/api/Test/WasteAddition";
+  // const url = "https://localhost:44321/api/Test/WasteAddition";
+  const url =
+    "https://biogas-cwevg4dzc3a9d9bz.canadacentral-01.azurewebsites.net/Help/Api/POST-api-Test-WasteAddition";
 
   axios
     .post(url, data)
