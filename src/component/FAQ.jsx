@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar } from "./Navbar";
+// import { Navbar } from "./Navbar";
 
 export const FAQ = () => {
   const [open, setOpen] = useState(null);

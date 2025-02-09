@@ -8,7 +8,7 @@ import axios from 'axios';
 export const Login = () => {
     const[email,setEmail] = useState('');
     const[password,setPassword] = useState('');
-    const [error, setError] = useState("");
+    // const [error, setError] = useState("");
 
      const navigate = useNavigate();
     const handleEmailChange = (value) => {

@@ -8,7 +8,7 @@ const QRPaymentPage = () => {
   const { quantity, totalPrice, date } = location.state || {};
   const [upiId, setUpiId] = React.useState("yogitavm2001@okaxis");
   const [qrValue, setQrValue] = React.useState("");
-  const [paymentSuccess, setPaymentSuccess] = React.useState(false);
+  // const [paymentSuccess, setPaymentSuccess] = React.useState(false);
 
    const navigate = useNavigate();
 
@@ -24,46 +24,46 @@ const QRPaymentPage = () => {
   };
 
   // Handle Razorpay Payment Process
-  const payWithRazorpay = () => {
-    if (!totalPrice || totalPrice <= 0) {
-      alert("Invalid total price.");
-      return;
-    }
+  // const payWithRazorpay = () => {
+  //   if (!totalPrice || totalPrice <= 0) {
+  //     alert("Invalid total price.");
+  //     return;
+  //   }
 
-    const options = {
-      key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key ID
-      amount: totalPrice * 100, // Convert to paise
-      currency: "INR",
-      name: "Biogas Producer",
-      description: "Payment for Biogas Purchase",
-      image: "https://example.com/your-logo.png", // Optional, use your logo URL
+    // const options = {
+    //   key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key ID
+    //   amount: totalPrice * 100, // Convert to paise
+    //   currency: "INR",
+    //   name: "Biogas Producer",
+    //   description: "Payment for Biogas Purchase",
+    //   image: "https://example.com/your-logo.png", // Optional, use your logo URL
 
       // handler: function (response) {
       //   alert(
       //     `Payment successful! Payment ID: ${response.razorpay_payment_id}`
       //   );
       // },
-      handler: function (response) {
-        setPaymentSuccess(true); // Correct state update
-      },
+      // handler: function (response) {
+      //   setPaymentSuccess(true); // Correct state update
+      // },
 
-      prefill: {
-        name: "Customer Name", // Add customer name
-        email: "customer@example.com", // Add customer email
-        contact: "1234567890", // Add customer contact
-      },
-      notes: {
-        quantity: quantity,
-        delivery_date: date,
-      },
-      theme: {
-        color: "#4CAF50", // Optional, customize the theme color
-      },
-    };
+      // prefill: {
+      //   name: "Customer Name", // Add customer name
+      //   email: "customer@example.com", // Add customer email
+      //   contact: "1234567890", // Add customer contact
+      // },
+      // notes: {
+      //   quantity: quantity,
+      //   delivery_date: date,
+      // },
+      // theme: {
+      //   color: "#4CAF50", // Optional, customize the theme color
+      // },
+  //   };
 
-    const razorpay = new window.Razorpay(options);
-    razorpay.open();
-  };
+  //   const razorpay = new window.Razorpay(options);
+  //   razorpay.open();
+  // };
 
   // Dynamically load Razorpay script
   React.useEffect(() => {
