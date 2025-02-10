@@ -1,0 +1,12 @@
+Biogas Management Portal
+A web-based system that manages
+biogas production from waste 
+contributed by users. The platform 
+facilitates waste collection,
+biogas generation, and sales to 
+customers. It includes role-based
+access for contributors, producers, 
+and buyers. The backend and SQL
+database are deployed on Azure, 
+while the frontend is hosted on
+Vercel.
